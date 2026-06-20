@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DigiBott Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* Your existing CSS from uploaded file */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Roboto,sans-serif;
+  background:#fff;
+}
+
+.containerzz{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin:10px auto;
+}
+
+.main-imagezz{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.main-labelzz{
+  margin-top:4px;
+  font-weight:bold;
+}
+
+.search-bar{
+  max-width:400px;
+  margin:15px auto;
+  text-align:center;
+}
+
+.search-bar input{
+  width:96%;
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:15px;
+}
+
+.tabs button{
+  border:none;
+  border-radius:20px;
+  padding:8px 20px;
+  cursor:pointer;
+  background:#eee;
+}
+
+.tabs button.active{
+  background:#000;
+  color:#fcc66f;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(48%,1fr));
+  gap:6px;
+  padding:0 8px;
+}
+
+@media(min-width:600px){
+  .grid{
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  }
+}
+
+.card{
+  border:1.6px solid #383636;
+  border-radius:8px;
+  overflow:hidden;
+  background:#fff;
+  text-align:center;
+  box-shadow:0 4px 4px rgba(0,0,0,.1);
+}
+
+.card:hover{
+  border:2px solid #e32b62;
+}
+
+.card a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.product-img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+}
+
+.product-title{
+  background:#000;
+  color:#fcc66f;
+  padding:8px 4px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+#loader{
+  height:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="containerzz">
+
+<img
+class="main-imagezz"
+src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjIYza8kBTGwpO6_BQovoAwWavXv1glAwDFGi9I6x1ZhmkMc_nl23GfpSD-gQnm7N4bNMnAqgsbpUdmUUNZK1DFSeI_ed0TYN8GzBe3P_LDqTZKmQMilfHLIpm73EUJdy9uoB470HRZGrSdJ1620_Xik5-UIDLg35JIfOCLHqdDZS-rP9H6YKedaNav2lQy/s200/Resized.png">
+
+<div class="main-labelzz">
+Shantanu Priyadarshi | DigiBott
+</div>
+
+</div>
+
+<div class="search-bar">
+<input
+id="searchInput"
+placeholder="Search products or links...">
+</div>
+
+<div class="tabs">
+<button id="shopTab" class="active">Shop</button>
+<button id="linksTab">Links</button>
+</div>
+
+<div id="grid" class="grid"></div>
+
+<div id="loader"></div>
+
+<script>
+
+const ITEMS_PER_LOAD = 16;
+
+let products = [];
+let links = [];
+
+let currentTab = "shop";
+let filteredData = [];
+let loadedCount = 0;
+
+async function init(){
+
+  products =
+  await fetch("products.json")
+  .then(r=>r.json());
+
+  links =
+  await fetch("links.json")
+  .then(r=>r.json());
+
+  switchTab("shop");
+}
+
+function switchTab(tab){
+
+  currentTab = tab;
+
+  document
+  .querySelectorAll(".tabs button")
+  .forEach(btn=>btn.classList.remove("active"));
+
+  if(tab==="shop"){
+    shopTab.classList.add("active");
+  }else{
+    linksTab.classList.add("active");
+  }
+
+  applySearch();
+}
+
+function applySearch(){
+
+  const search =
+  document
+  .getElementById("searchInput")
+  .value
+  .toLowerCase()
+  .trim();
+
+  const source =
+  currentTab==="shop"
+  ? products
+  : links;
+
+  filteredData =
+  source.filter(item =>
+    item.title
+    .toLowerCase()
+    .includes(search)
+  );
+
+  loadedCount = 0;
+
+  document
+  .getElementById("grid")
+  .innerHTML = "";
+
+  loadMore();
+}
+
+function loadMore(){
+
+  const grid =
+  document.getElementById("grid");
+
+  const end =
+  Math.min(
+    loadedCount + ITEMS_PER_LOAD,
+    filteredData.length
+  );
+
+  for(let i=loadedCount;i<end;i++){
+
+    const item = filteredData[i];
+
+    const card =
+    document.createElement("div");
+
+    card.className = "card";
+
+    if(currentTab==="shop"){
+
+      card.innerHTML = `
+      <a href="${item.link}" target="_blank">
+        <img
+        class="product-img"
+        src="${item.image}"
+        loading="lazy"
+        decoding="async">
+        <div class="product-title">
+        ${item.title}
+        </div>
+      </a>
+      `;
+
+    }else{
+
+      card.innerHTML = `
+      <a href="${item.link}" target="_blank">
+        <div class="product-title">
+        ${item.title}
+        </div>
+      </a>
+      `;
+    }
+
+    grid.appendChild(card);
+  }
+
+  loadedCount = end;
+}
+
+const observer =
+new IntersectionObserver(entries=>{
+
+  if(entries[0].isIntersecting){
+
+    if(
+      loadedCount <
+      filteredData.length
+    ){
+      loadMore();
+    }
+
+  }
+
+},{
+  rootMargin:"400px"
+});
+
+observer.observe(
+document.getElementById("loader")
+);
+
+searchInput.addEventListener(
+"input",
+applySearch
+);
+
+shopTab.addEventListener(
+"click",
+()=>switchTab("shop")
+);
+
+linksTab.addEventListener(
+"click",
+()=>switchTab("links")
+);
+
+init();
+
+</script>
+
+</body>
+</html>
