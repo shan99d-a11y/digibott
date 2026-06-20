@@ -1,0 +1,9 @@
+<div id="header"></div>
+
+<script>
+fetch('/header.html')
+  .then(r => r.text())
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+  });
+</script>
