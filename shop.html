@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,8 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
-
-/* Your existing CSS from uploaded file */
 
 *{
   box-sizing:border-box;
@@ -111,6 +108,7 @@ body{
   width:100%;
   aspect-ratio:1/1;
   object-fit:cover;
+  display:block;
 }
 
 .product-title{
@@ -123,11 +121,16 @@ body{
 }
 
 #loader{
-  height:30px;
+  height:50px;
+}
+
+.no-results{
+  text-align:center;
+  padding:30px;
+  font-size:18px;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -170,17 +173,37 @@ let currentTab = "shop";
 let filteredData = [];
 let loadedCount = 0;
 
+const grid = document.getElementById("grid");
+const loader = document.getElementById("loader");
+const searchInput = document.getElementById("searchInput");
+const shopTab = document.getElementById("shopTab");
+const linksTab = document.getElementById("linksTab");
+
 async function init(){
 
-  products =
-  await fetch("products.json")
-  .then(r=>r.json());
+  try{
 
-  links =
-  await fetch("links.json")
-  .then(r=>r.json());
+    const productsResponse =
+      await fetch("./products.json");
 
-  switchTab("shop");
+    const linksResponse =
+      await fetch("./links.json");
+
+    products =
+      await productsResponse.json();
+
+    links =
+      await linksResponse.json();
+
+    switchTab("shop");
+
+  }catch(error){
+
+    console.error(error);
+
+    grid.innerHTML =
+      '<div class="no-results">Failed to load JSON files</div>';
+  }
 }
 
 function switchTab(tab){
@@ -188,10 +211,12 @@ function switchTab(tab){
   currentTab = tab;
 
   document
-  .querySelectorAll(".tabs button")
-  .forEach(btn=>btn.classList.remove("active"));
+    .querySelectorAll(".tabs button")
+    .forEach(btn =>
+      btn.classList.remove("active")
+    );
 
-  if(tab==="shop"){
+  if(tab === "shop"){
     shopTab.classList.add("active");
   }else{
     linksTab.classList.add("active");
@@ -203,64 +228,79 @@ function switchTab(tab){
 function applySearch(){
 
   const search =
-  document
-  .getElementById("searchInput")
-  .value
-  .toLowerCase()
-  .trim();
+    searchInput.value
+    .toLowerCase()
+    .trim();
 
   const source =
-  currentTab==="shop"
-  ? products
-  : links;
+    currentTab === "shop"
+    ? products
+    : links;
 
-  filteredData =
-  source.filter(item =>
-    item.title
-    .toLowerCase()
-    .includes(search)
-  );
+  filteredData = source.filter(item => {
+
+    const title =
+      (item.title || "")
+      .toLowerCase();
+
+    const desc =
+      (item.description || "")
+      .toLowerCase();
+
+    return (
+      title.includes(search) ||
+      desc.includes(search)
+    );
+  });
 
   loadedCount = 0;
 
-  document
-  .getElementById("grid")
-  .innerHTML = "";
+  grid.innerHTML = "";
+
+  if(filteredData.length === 0){
+
+    grid.innerHTML =
+      '<div class="no-results">No Results Found</div>';
+
+    return;
+  }
 
   loadMore();
 }
 
 function loadMore(){
 
-  const grid =
-  document.getElementById("grid");
-
   const end =
-  Math.min(
-    loadedCount + ITEMS_PER_LOAD,
-    filteredData.length
-  );
+    Math.min(
+      loadedCount + ITEMS_PER_LOAD,
+      filteredData.length
+    );
 
-  for(let i=loadedCount;i<end;i++){
+  for(let i = loadedCount; i < end; i++){
 
     const item = filteredData[i];
 
+    const link =
+      item.shortUrl ||
+      item.url ||
+      "#";
+
     const card =
-    document.createElement("div");
+      document.createElement("div");
 
     card.className = "card";
 
-    if(currentTab==="shop"){
+    if(currentTab === "shop"){
 
       card.innerHTML = `
-      <a href="${item.link}" target="_blank">
+      <a href="${link}" target="_blank" rel="noopener">
         <img
-        class="product-img"
-        src="${item.imageUrl}"
-        loading="lazy"
-        decoding="async">
+          class="product-img"
+          src="${item.imageUrl || ''}"
+          alt="${item.title || ''}"
+          loading="lazy">
         <div class="product-title">
-        ${item.title}
+          ${item.title || ''}
         </div>
       </a>
       `;
@@ -268,9 +308,9 @@ function loadMore(){
     }else{
 
       card.innerHTML = `
-      <a href="${item.link}" target="_blank">
+      <a href="${link}" target="_blank" rel="noopener">
         <div class="product-title">
-        ${item.title}
+          ${item.title || ''}
         </div>
       </a>
       `;
@@ -283,40 +323,34 @@ function loadMore(){
 }
 
 const observer =
-new IntersectionObserver(entries=>{
+new IntersectionObserver(entries => {
 
-  if(entries[0].isIntersecting){
-
-    if(
-      loadedCount <
-      filteredData.length
-    ){
-      loadMore();
-    }
-
+  if(
+    entries[0].isIntersecting &&
+    loadedCount < filteredData.length
+  ){
+    loadMore();
   }
 
 },{
   rootMargin:"400px"
 });
 
-observer.observe(
-document.getElementById("loader")
-);
+observer.observe(loader);
 
 searchInput.addEventListener(
-"input",
-applySearch
+  "input",
+  applySearch
 );
 
 shopTab.addEventListener(
-"click",
-()=>switchTab("shop")
+  "click",
+  () => switchTab("shop")
 );
 
 linksTab.addEventListener(
-"click",
-()=>switchTab("links")
+  "click",
+  () => switchTab("links")
 );
 
 init();
