@@ -465,19 +465,7 @@ const products = Array.from(cards).map(card => {
       });
     }
     
-    
-    function openDialog() {
-  document.getElementById("amazonDialog").style.display = "block";
-      if (url.includes('amazon.in')) {
-        const appUrl = url.replace('https://', 'com.amazon.mobile.shopping.web://');
-        window.location.href = appUrl;
-      }
-}
-    
-    function closeDialog() {
-  document.getElementById("amazonDialog").style.display = "none";
-}
-    
+   
     function openAmazonApp() {
       if (url.includes('amazon.in')) {
         const appUrl = url.replace('https://', 'com.amazon.mobile.shopping.web://');
