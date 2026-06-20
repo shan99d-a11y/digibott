@@ -1,263 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About DigiBott</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #0b1220;
-      --secondary: #3b82f6;
-      --accent: #22c55e;
-      --gradient: linear-gradient(135deg, #3b82f6, #22c55e);
-      --text: #334155;
-    }
-    
-    .item #main-wrapper {
-      width: 100%;
-    }
-    
-    .blog-post-comments {
-      display: none !important;
-    }
-	#sidebar-wrapper {
-      width: 0px;
-      height: 0px;
-      display : none;
-      
-    }
-    #footer-wrapper .container {
-      padding: 0px;
-    }
-    
-    .footer-widgets-wrap {
-      display: none;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About DigiBott</title>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    body {
-      background: radial-gradient(circle at top, #e0e7ff, #f8fafc);
-      color: var(--text);
-      line-height: 1.8;
-    }
+<style>
+:root{
+  --primary:#0b1220;
+  --secondary:#3b82f6;
+  --accent:#22c55e;
+  --gradient:linear-gradient(135deg,#3b82f6,#22c55e);
+  --text:#334155;
+}
 
-    section {
-      padding: 20px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    /* HERO */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    .badge {
-      display: inline-block;
-      background: var(--gradient);
-      color: #fff;
-      padding: 8px 20px;
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 20px;
-      letter-spacing: 0.4px;
-    }
+body{
+  font-family:'Poppins',sans-serif;
+  background:radial-gradient(circle at top,#e0e7ff,#f8fafc);
+  color:var(--text);
+  line-height:1.8;
+  overflow-x:hidden;
+}
 
-    h1 {
-      font-size: 48px;
-      color: var(--primary);
-      margin-bottom: 20px;
-    }
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:50px 20px;
+}
 
-    h1 span {
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+/* HERO */
 
-    p {
-      font-size: 17px;
-      margin-bottom: 20px;
-    }
+.hero{
+  text-align:center;
+  padding-top:60px;
+}
 
-    .hero-highlight {
-      background: linear-gradient(135deg, #f1f5ff, #ecfeff);
-      border-radius: 24px;
-      padding: 40px;
-    }
+.hero h1{
+  font-size:clamp(32px,6vw,52px);
+  color:var(--primary);
+  margin-bottom:25px;
+  line-height:1.2;
+}
 
-    .hero-highlight h3 {
-      font-size: 22px;
-      color: var(--primary);
-      margin-bottom: 12px;
-    }
+.hero h1 span{
+  background:var(--gradient);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-    /* HEADINGS */
-    h2 {
-      font-size: 30px;
-      color: var(--primary);
-      margin-bottom: 25px;
-      text-align: center;
-    }
+.hero p{
+  max-width:850px;
+  margin:0 auto 20px;
+  font-size:18px;
+}
 
-    /* FEATURES */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 28px;
-    }
+/* HIGHLIGHT */
 
-    .feature {
-      padding: 30px;
-      border-radius: 22px;
-      background: linear-gradient(135deg, #ffffff, #f8fafc);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-      font-size: 16px;
-      font-weight: 500;
-      transition: 0.35s ease;
-    }
+.hero-highlight{
+  background:linear-gradient(135deg,#f1f5ff,#ecfeff);
+  border-radius:24px;
+  padding:40px;
+  text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,.05);
+}
 
-    .feature:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.1);
-    }
+.hero-highlight h3{
+  font-size:24px;
+  color:var(--primary);
+  margin-bottom:15px;
+}
 
-    /* TRUST */
-    .trust {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
+/* SECTION TITLE */
 
-    .trust div {
-      padding: 28px;
-      border-radius: 22px;
-      background: linear-gradient(135deg, #eef2ff, #ffffff);
-      font-size: 16px;
-      font-weight: 600;
-      border-top: 5px solid var(--secondary);
-    }
+h2{
+  font-size:32px;
+  color:var(--primary);
+  text-align:center;
+  margin-bottom:30px;
+}
 
-    /* SOCIAL */
-    .socials {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-top: 30px;
-    }
+/* FEATURES */
 
-    .socials a {
-      text-decoration: none !important;
-      padding: 12px 24px;
-      border-radius: 999px;
-      font-size: 15px;
-      font-weight: 600;
-      color: white !important;
-      box-shadow: none;
-      border: none;
-      transition: transform 0.2s ease;
-    }
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
 
-    .socials a:hover {
-      transform: translateY(-2px);
-    }
+.feature{
+  padding:30px;
+  border-radius:22px;
+  background:linear-gradient(135deg,#ffffff,#f8fafc);
+  box-shadow:0 20px 40px rgba(0,0,0,.06);
+  transition:.3s ease;
+  font-weight:500;
+}
 
-    .socials a.youtube { background: #ff0000; }
-    .socials a.instagram { background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); }
-    .socials a.facebook { background: #1877f2; }
-    .socials a.twitter { background: #000000; }
+.feature:hover{
+  transform:translateY(-6px);
+  box-shadow:0 25px 50px rgba(0,0,0,.1);
+}
 
-    .socials a:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 35px rgba(59,130,246,0.35);
-    }
+/* TRUST */
 
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 30px 20px 50px;
-      font-size: 16px;
-    }
+.trust{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+}
 
-    footer span {
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 600;
-    }
+.trust div{
+  padding:28px;
+  border-radius:22px;
+  background:linear-gradient(135deg,#eef2ff,#ffffff);
+  border-top:5px solid var(--secondary);
+  box-shadow:0 12px 30px rgba(0,0,0,.05);
+  font-weight:600;
+}
 
-    @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-      h1 {
-        font-size: 36px;
-      }
-    }
-  </style>
+/* SOCIALS */
+
+.socials{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:18px;
+}
+
+.socials a{
+  text-decoration:none;
+  color:#fff;
+  padding:12px 24px;
+  border-radius:999px;
+  font-weight:600;
+  transition:.25s ease;
+}
+
+.socials a.youtube{
+  background:#ff0000;
+}
+
+.socials a.instagram{
+  background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af);
+}
+
+.socials a.facebook{
+  background:#1877f2;
+}
+
+.socials a.twitter{
+  background:#000;
+}
+
+.socials a:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 35px rgba(59,130,246,.35);
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:30px 20px 60px;
+}
+
+footer p{
+  margin-bottom:8px;
+}
+
+footer span{
+  background:var(--gradient);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-weight:600;
+}
+
+/* TABLET */
+
+@media (max-width:768px){
+
+  section{
+    padding:40px 16px;
+  }
+
+  .hero{
+    padding-top:40px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  h2{
+    font-size:28px;
+  }
+
+  .hero-highlight{
+    padding:28px;
+  }
+
+  .hero-highlight h3{
+    font-size:22px;
+  }
+
+  .feature,
+  .trust div{
+    padding:24px;
+  }
+
+  .socials{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+
+  .socials a{
+    width:100%;
+    text-align:center;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width:480px){
+
+  section{
+    padding:32px 14px;
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  h2{
+    font-size:24px;
+  }
+
+  .hero-highlight{
+    padding:22px;
+    border-radius:18px;
+  }
+
+  .feature,
+  .trust div{
+    padding:20px;
+    border-radius:18px;
+  }
+
+  .socials{
+    grid-template-columns:1fr;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <section class="hero">
+<section class="hero">
+  <h1>Decode Technology with <span>DigiBott</span> 🚀</h1>
+
+  <p>
+    DigiBott is a Hindi-first technology platform dedicated to making
+    gadgets, apps, AI tools, and digital trends easy to understand.
+    We believe technology should be practical, useful, and accessible
+    to everyone.
+  </p>
+
+  <p>
+    Founded by <strong>Shantanu Priyadarshi</strong>, DigiBott helps users
+    discover smarter ways to use technology through honest reviews,
+    useful tips, myth-busting content, and simple explanations.
+  </p>
+</section>
+
+<section>
+  <div class="hero-highlight">
+    <h3>Why Hindi Tech Matters 🇮🇳</h3>
+
+    <p>
+      Technology is becoming an important part of everyday life, but quality
+      information is often hidden behind technical language. DigiBott bridges
+      that gap by explaining complex topics in simple Hindi, helping users
+      learn with confidence and stay updated with the latest innovations.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>What You'll Find Here 🔍</h2>
+
+  <div class="features">
+
+    <div class="feature">
+      📱 Gadget Unboxings & Real-World Reviews
+    </div>
+
+    <div class="feature">
+      🤖 AI Tools & Smart Automation Explained
+    </div>
+
+    <div class="feature">
+      🧠 Tech Myths & Viral Claims Busted
+    </div>
+
+    <div class="feature">
+      🌐 Useful Websites & Hidden Online Tools
+    </div>
+
+    <div class="feature">
+      ⚡ Simple Tech Tips for Everyday Life
+    </div>
+
+    <div class="feature">
+      📊 Smartphone Buying Guides & Comparisons
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Why People Trust DigiBott 💡</h2>
+
+  <div class="trust">
+
     <div>
-      <h1>Decode Technology with <span>DigiBott</span> 🚀</h1>
-      <p><strong>DigiBott</strong> is a Hindi-first tech platform where gadgets, AI tools, and digital trends are explained clearly, honestly, and practically. Founded by <strong>Shantanu Priyadarshi</strong>, DigiBott exists to make technology simple for everyone.</p>
-      <p>Our mission is simple — remove confusion, bust tech myths, and help people use technology smarter without hype or jargon.</p>
+      ✅ Honest opinions based on real-world experience
     </div>
-  </section>
 
-  <section>
-    <div class="hero-highlight">
-      <h3>Why Hindi Tech Matters 🇮🇳</h3>
-      <p>Because powerful tech knowledge should be accessible to everyone. DigiBott explains everything in Hindi so learning feels natural, confident, and stress-free.</p>
+    <div>
+      ✅ Simple explanations without unnecessary jargon
     </div>
-  </section>
 
-  <section>
-    <h2>What You’ll Find Here 🔍</h2>
-    <div class="features">
-      <div class="feature">📱 Gadget Unboxings & Real‑World Reviews</div>
-      <div class="feature">🤖 AI Tools & Smart Automation Explained</div>
-      <div class="feature">🧠 Tech Myths & Viral Claims Busted</div>
-      <div class="feature">🌐 Useful Websites & Hidden Online Tools</div>
-      <div class="feature">⚡ Simple Tech Tips for Daily Life</div>
+    <div>
+      ✅ Content tailored for Indian users and audiences
     </div>
-  </section>
 
-  <section>
-    <h2>Why People Trust DigiBott 💡</h2>
-    <div class="trust">
-      <div>✅ Honest opinions — no paid hype</div>
-      <div>✅ Easy explanations with real examples</div>
-      <div>✅ Content made for Indian users</div>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <h2>Join the DigiBott Community 🌍</h2>
-    <div class="socials">
-      <a class="youtube" href="https://www.youtube.com/@DigiBott?sub_confirmation=1">YouTube</a>
-      <a class="instagram" href="https://www.instagram.com/DigiBott">Instagram</a>
-      <a class="facebook" href="https://www.facebook.com/DigiBott">Facebook</a>
-      <a class="twitter" href="https://x.com/DigiBott">Twitter/X</a>
-    </div>
-  </section>
+<section>
+  <h2>Join the DigiBott Community 🌍</h2>
 
-  <footer>
-    📩 Business & support: <span>mail@digibott.com</span>
-  </footer>
+  <div class="socials">
+    <a class="youtube" href="https://www.youtube.com/@DigiBott?sub_confirmation=1" target="_blank">YouTube</a>
+
+    <a class="instagram" href="https://www.instagram.com/DigiBott" target="_blank">Instagram</a>
+
+    <a class="facebook" href="https://www.facebook.com/DigiBott" target="_blank">Facebook</a>
+
+    <a class="twitter" href="https://x.com/DigiBott" target="_blank">X / Twitter</a>
+  </div>
+</section>
+
+<footer>
+  <p>📩 Business & Support</p>
+  <span>mail@digibott.com</span>
+</footer>
 
 </body>
 </html>
