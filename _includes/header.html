@@ -1,7 +1,119 @@
-<header>
-  <h1>DigiBott</h1>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-  </nav>
+<header class="db-header">
+  <div class="db-container">
+    <a href="https://digibott.com" class="db-logo">
+      DigiBott
+    </a>
+
+    <button class="db-menu-btn" onclick="toggleMenu()">
+      ☰
+    </button>
+
+    <nav class="db-nav" id="dbNav">
+      <a href="https://digibott.com">Home</a>
+      <a href="https://digibott.com/about.html">About</a>
+      <a href="https://digibott.com/contact.html">Contact</a>
+      <a href="https://blog.digibott.com">Blog</a>
+    </nav>
+  </div>
 </header>
+
+<style>
+:root{
+  --bg:#2d2d2d;
+  --bg2:#3a3a3a;
+  --text:#ffffff;
+  --accent:#00c896;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+.db-header{
+  background:var(--bg);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+
+.db-container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:70px;
+}
+
+.db-logo{
+  color:var(--text);
+  text-decoration:none;
+  font-size:28px;
+  font-weight:700;
+  letter-spacing:.5px;
+}
+
+.db-logo:hover{
+  color:var(--accent);
+}
+
+.db-nav{
+  display:flex;
+  gap:25px;
+}
+
+.db-nav a{
+  color:var(--text);
+  text-decoration:none;
+  font-size:15px;
+  font-weight:500;
+  transition:.3s;
+}
+
+.db-nav a:hover{
+  color:var(--accent);
+}
+
+.db-menu-btn{
+  display:none;
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:28px;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+
+  .db-menu-btn{
+    display:block;
+  }
+
+  .db-nav{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:var(--bg2);
+    flex-direction:column;
+    padding:15px 0;
+  }
+
+  .db-nav.active{
+    display:flex;
+  }
+
+  .db-nav a{
+    padding:12px 20px;
+  }
+}
+</style>
+
+<script>
+function toggleMenu() {
+  document.getElementById("dbNav").classList.toggle("active");
+}
+</script>
