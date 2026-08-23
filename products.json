@@ -205,7 +205,7 @@
     "imageUrl": "https://m.media-amazon.com/images/I/71XGRx7xFEL._SL1500_.jpg",
     "url": "https://www.amazon.in/dp/B0DTPGB55B?tag=digibott0c-21",
     "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B0DTPGB55B?tag=digibott0c-21",
-    "shortUrl": "http://dbtt.in/lg"
+    "shortUrl": "https://dbtt.in/lg"
   },
   {
     "title": "3D Crystal Ball Light",
@@ -360,12 +360,12 @@
     "shortUrl": ""
   },
   {
-    "title": "Mantra Jap Counter",
-    "description": "",
-    "imageUrl": "https://m.media-amazon.com/images/I/51BoZ1MHDuL._SL1020_.jpg",
+    "title": "Mantra Jap Digital Counter ?",
+    "description": "Keep track of your Mantra Jap, Naam Jap, Meditation, Prayer & Pooja with this compact digital counter. ?",
+    "imageUrl": "https://m.media-amazon.com/images/I/51NCLtrWZGL._SL1024_.jpg",
     "url": "https://www.amazon.in/s?k=mantra+jap+counter&tag=digibott0c-21",
     "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/s?k=mantra+jap+counter&tag=digibott0c-21",
-    "shortUrl": ""
+    "shortUrl": "https://dbtt.in/Counter"
   },
   {
     "title": "Touch Control LED Lamp",
@@ -485,7 +485,7 @@
     "imageUrl": "https://m.media-amazon.com/images/I/61qA7LEo66L._SL1500_.jpg",
     "url": "https://www.amazon.in/s?k=aeroplane+car+perfume+diffuser&tag=digibott0c-21",
     "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/s?k=aeroplane+car+perfume+diffuser&tag=digibott0c-21",
-    "shortUrl": "http://dbtt.in/cd"
+    "shortUrl": "https://dbtt.in/cd"
   },
   {
     "title": "Wireless Car Receiver",
@@ -509,6 +509,46 @@
     "imageUrl": "https://m.media-amazon.com/images/I/81qMQIyqsBL._SL1500_.jpg",
     "url": "https://www.amazon.in/dp/B0C2J2L1J2?tag=digibott0c-21",
     "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B0C2J2L1J2?tag=digibott0c-21",
-    "shortUrl": "http://dbtt.in/kf"
+    "shortUrl": "https://dbtt.in/kf"
+  },
+  {
+    "title": "Canon EOS R50 V Smartchoice Mirrorless Camera Kit with RF-S14-30mm F4-6.3 is STM PZ Lens",
+    "description": "",
+    "imageUrl": "https://m.media-amazon.com/images/I/71tLYivmz3L._SL1443_.jpg",
+    "url": "https://www.amazon.in/dp/B0F3X5K2V3?tag=digibott0c-21",
+    "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B0F3X5K2V3?tag=digibott0c-21",
+    "shortUrl": "https://dbtt.in/r50v"
+  },
+  {
+    "title": "Canon EOS R50 RF-S18-45mm f/4.5-6.3 is STM Mirrorless Camera",
+    "description": "",
+    "imageUrl": "https://m.media-amazon.com/images/I/81LskAU5h1L._SL1500_.jpg",
+    "url": "https://www.amazon.in/dp/B0BYZHDRN6?tag=digibott0c-21",
+    "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B0BYZHDRN6?tag=digibott0c-21",
+    "shortUrl": "https://dbtt.in/r50"
+  },
+  {
+    "title": "SanDisk Extreme Pro SD UHS I 64GB Card for 4K Video for DSLR and Mirrorless Cameras 200MB/s Read & 90MB/s Write",
+    "description": "",
+    "imageUrl": "https://m.media-amazon.com/images/I/51oAxrz1daL._SL1000_.jpg",
+    "url": "https://www.amazon.in/dp/B09X7C7NCZ?tag=digibott0c-21",
+    "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B09X7C7NCZ?tag=digibott0c-21",
+    "shortUrl": "https://dbtt.in/sdc64"
+  },
+  {
+    "title": "Digital USB Power Tester",
+    "description": "USB Power Meter Type-C Tester, 4.5-50V, 0-12A, 600W PD3.1 | USB Voltage Meter Measures",
+    "imageUrl": "https://m.media-amazon.com/images/I/61+fKzKitBL._SL1200_.jpg",
+    "url": "https://www.amazon.in/dp/B0D8FJ2FCX?tag=digibott0c-21",
+    "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B0D8FJ2FCX?tag=digibott0c-21",
+    "shortUrl": "https://dbtt.in/dut"
+  },
+  {
+    "title": "Cordless Screwdriver",
+    "description": "INGCO 4V cordless screwdriver delivers up to 4 N?m torque and 240 RPM, with a rechargeable design and handy toolbox. Perfect for quick everyday fixes at home. ???",
+    "imageUrl": "https://m.media-amazon.com/images/I/71dVuUzvBkL._SL1500_.jpg",
+    "url": "https://www.amazon.in/dp/B0CMHJSKVZ?tag=digibott0c-21",
+    "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B0CMHJSKVZ?tag=digibott0c-21",
+    "shortUrl": "https://dbtt.in/csd"
   }
 ]
