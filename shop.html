@@ -363,7 +363,7 @@ async function loadProducts() {
 
     allProducts = await response.json();
 
-    renderProducts(allProducts);
+    renderProducts([...allProducts].reverse());
   } catch (err) {
     console.error("Failed to load products:", err);
   }
@@ -399,7 +399,7 @@ function filterProducts() {
     product.title.toLowerCase().includes(searchTerm)
   );
 
-  renderProducts(filtered);
+  renderProducts([...filtered].reverse());
 }
 
 loadProducts();
