@@ -97,11 +97,11 @@
   },
   {
     "title": "T800 Ultra Smart Watch",
-    "description": "",
-    "imageUrl": "https://m.media-amazon.com/images/I/41M-KlSMt5L.jpg",
-    "url": "https://www.meesho.com/af_invite/216870542:instagram_stories:456033?p_id=465904768&ext_id=7pdyf4&utm_source=instagram_stories",
-    "appUrl": "",
-    "shortUrl": ""
+    "description": "Ultra Smart Watch with Orange Strap | Bluetooth Connectivity, Fitness Tracking, HD Display",
+    "imageUrl": "https://m.media-amazon.com/images/I/51YqsxrstiL._SL1024_.jpg",
+    "url": "https://www.amazon.in/dp/B0H6P7HN3Q?tag=digibott0c-21",
+    "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B0H6P7HN3Q?tag=digibott0c-21",
+    "shortUrl": "https://dbtt.in/t800"
   },
   {
     "title": "Massage Gun",
@@ -694,5 +694,53 @@
     "url": "https://www.amazon.in/dp/B0DZ716WQQ?tag=digibott0c-21",
     "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B0DZ716WQQ?tag=digibott0c-21",
     "shortUrl": "https://dbtt.in/nug"
+  },
+  {
+    "title": "12 LED Fogger Water Fountain Pond",
+    "description": "Multicolor Changing Mist Maker Fogger Water Fountain Pond",
+    "imageUrl": "https://m.media-amazon.com/images/I/418ulCD758L.jpg",
+    "url": "https://www.amazon.in/dp/B07WPP1JXY?tag=digibott0c-21",
+    "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B07WPP1JXY?tag=digibott0c-21",
+    "shortUrl": "https://dbtt.in/fmw"
+  },
+  {
+    "title": "Powerful Cordless Air Blower",
+    "description": "Carlizem TurboJet Powerful Cordless Air Blower ? 150,000 RPM ?",
+    "imageUrl": "https://m.media-amazon.com/images/I/616BEdNb8GL._SL1254_.jpg",
+    "url": "https://www.amazon.in/dp/B0GXW454NK?tag=digibott0c-21",
+    "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B0GXW454NK?tag=digibott0c-21",
+    "shortUrl": "https://dbtt.in/ctb"
+  },
+  {
+    "title": "Wizard Incense Stick Holder",
+    "description": "Wizard Incense Stick Holder",
+    "imageUrl": "https://m.media-amazon.com/images/I/41RCqKU5KlL.jpg",
+    "url": "https://www.amazon.in/dp/B0GDFMSRYD?tag=digibott0c-21",
+    "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B0GDFMSRYD?tag=digibott0c-21",
+    "shortUrl": "https://dbtt.in/wah"
+  },
+  {
+    "title": "Mini AC Car Pefume Diffuser",
+    "description": "Solar Powered Car Air Freshener, Mini AC Design Stylish Dashboard Air Freshener",
+    "imageUrl": "https://m.media-amazon.com/images/I/41nIp0Ldi7L.jpg",
+    "url": "https://www.amazon.in/dp/B0H2MPL6TH?tag=digibott0c-21",
+    "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B0H2MPL6TH?tag=digibott0c-21",
+    "shortUrl": "https://dbtt.in/acd"
+  },
+  {
+    "title": "70mai A510 HDR 3K Dual DashCam",
+    "description": "Get 3K HDR front recording and Full HD rear coverage in one setup. With a Sony STARVIS 2 sensor, built-in GPS and ADAS alerts.",
+    "imageUrl": "https://m.media-amazon.com/images/I/715Ejc4ezVL._SL1254_.jpg",
+    "url": "https://www.amazon.in/dp/B0CVH2K929?tag=digibott0c-21",
+    "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B0CVH2K929?tag=digibott0c-21",
+    "shortUrl": "https://dbtt.in/70mai"
+  },
+  {
+    "title": "Car Air Vent Pilot Perfume Diffuser",
+    "description": "Pilot Astronaut Airplane Car Air Vent Fragrance Diffuser",
+    "imageUrl": "https://m.media-amazon.com/images/I/51agZE4tK1L.jpg",
+    "url": "https://www.amazon.in/dp/B0HBCGF2XC?tag=digibott0c-21",
+    "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B0HBCGF2XC?tag=digibott0c-21",
+    "shortUrl": "https://dbtt.in/apd"
   }
 ]
