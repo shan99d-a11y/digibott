@@ -217,7 +217,7 @@
   },
   {
     "title": "10,000mAh Power Bank",
-    "description": "",
+    "description": "iffin",
     "imageUrl": "https://m.media-amazon.com/images/I/61SAK7PCV4L._SL1500_.jpg",
     "url": "https://www.amazon.in/dp/B0DDCQ9QJ4?tag=digibott0c-21",
     "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B0DDCQ9QJ4?tag=digibott0c-21",
@@ -742,5 +742,37 @@
     "url": "https://www.amazon.in/dp/B0HBCGF2XC?tag=digibott0c-21",
     "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B0HBCGF2XC?tag=digibott0c-21",
     "shortUrl": "https://dbtt.in/apd"
+  },
+  {
+    "title": "50 Years Calendar Key Chain",
+    "description": "50 Years Calendar Key Chain",
+    "imageUrl": "https://m.media-amazon.com/images/I/71fvjRwclQL._SX679_.jpg",
+    "url": "https://www.amazon.in/dp/B0C6QGR1V2?tag=digibott0c-21",
+    "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B0C6QGR1V2?tag=digibott0c-21",
+    "shortUrl": "https://dbtt.in/ckc"
+  },
+  {
+    "title": "HIFFIN G-Flash Spotlight",
+    "description": "RGB Spotlight for Reels & YouTube Videos? My Honest Review ?",
+    "imageUrl": "https://m.media-amazon.com/images/I/61GMcphLImL._SL1500_.jpg",
+    "url": "https://www.amazon.in/dp/B0FLY3B3CT?tag=digibott0c-21",
+    "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B0FLY3B3CT?tag=digibott0c-21",
+    "shortUrl": "https://dbtt.in/hgf"
+  },
+  {
+    "title": "Simpex 250W Bi Color Video Light",
+    "description": "Simpex VL-250Bi 250W Professional Bi Color Continuous LED Video Light",
+    "imageUrl": "https://m.media-amazon.com/images/I/71ljwGUehwL._SL1500_.jpg",
+    "url": "https://www.amazon.in/dp/B0HKNJK3SD?tag=digibott0c-21",
+    "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B0HKNJK3SD?tag=digibott0c-21",
+    "shortUrl": "https://dbtt.in/s250"
+  },
+  {
+    "title": "HIFFIN 150W RGB Video Light",
+    "description": "HIFFIN (COB-150P) 150W RGB LED Video Light | 2800K?6800K Dimmable | 11 FX Modes | 9800 Lumens | Remote Control ",
+    "imageUrl": "https://m.media-amazon.com/images/I/61SV8Bt9BoL._SL1500_.jpg",
+    "url": "https://www.amazon.in/dp/B0F24M3Y7M?tag=digibott0c-21",
+    "appUrl": "com.amazon.mobile.shopping.web://www.amazon.in/dp/B0F24M3Y7M?tag=digibott0c-21",
+    "shortUrl": "https://dbtt.in/h150"
   }
 ]
